@@ -7,9 +7,9 @@
 
 
 # 需求套件
-streamlit
-whisper
-其他基本python套件
+- streamlit
+- whisper
+- 其他基本python套件
 
 # 執行指令
 streamlit run main_stt.py
