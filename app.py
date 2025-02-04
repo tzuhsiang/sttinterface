@@ -77,7 +77,7 @@ with col2:
                 content = transcribe_audio_to_json(file_path)
                 processing_time = time.time() - start_time
                 st.write("📝 轉錄內容:")
-                st.text_area("轉錄結果", content, height=800)
+                st.text_area("轉錄結果", content, height=200)
                 st.write(f"⏱️ 處理時間: {processing_time:.2f} 秒")
 
 st.write("---")
