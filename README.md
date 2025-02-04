@@ -24,6 +24,7 @@ streamlit run app.py
 ```bash
 docker compose build
 ```
+註：若需要proxy，需修改.env/network.env
 
 ### 啟動系統(optional)
 ```bash
