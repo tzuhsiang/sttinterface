@@ -17,9 +17,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu && \
     pip install openai-whisper
 
-# 確保 whisper CLI 可用
-RUN ln -s $(which whisper) /usr/local/bin/whisper
-
+# **只在 `whisper` 不存在時才建立符號連結**
+RUN if [ ! -f /usr/local/bin/whisper ]; then ln -s $(which whisper) /usr/local/bin/whisper; fi
 
 # 確保 stt 模組可用
 COPY stt/stt.py /app/stt/stt.py

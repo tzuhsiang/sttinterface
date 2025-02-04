@@ -2,22 +2,20 @@
 import subprocess
 import json
 import os
-
+import shutil
 
 def transcribe_audio_to_json(audio_path):
-    whisper_path = "/opt/homebrew/bin/whisper"  # Whisper 安裝路徑
-    ffmpeg_path = "/opt/homebrew/bin/ffmpeg"
-    
-    # 設定環境變數，確保 subprocess 找得到 ffmpeg
-    env = os.environ.copy()
-    env["PATH"] += os.pathsep + "/opt/homebrew/bin"
+    # 嘗試自動找到 Whisper 執行檔
+    whisper_path = shutil.which("whisper")
+
+    if whisper_path is None:
+        raise FileNotFoundError("找不到 Whisper 執行檔，請確認 Whisper 是否已正確安裝在 Docker 容器內")
 
     # 執行 Whisper 命令行工具
     result = subprocess.run(
         [whisper_path, audio_path, "--model", "medium", "--output_format", "json"],
         capture_output=True,
-        text=True,
-        env=env  # 加入環境變數
+        text=True
     )
 
     content = result.stdout.split("\n")

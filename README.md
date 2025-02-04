@@ -14,5 +14,5 @@
 - 其他基本python套件
 
 # 執行指令
-streamlit run main_stt.py
+streamlit run app.py
 
