@@ -20,12 +20,12 @@
 streamlit run app.py
 ```
 
-## 建置映像檔(optional)
+### 建置映像檔(optional)
 ```bash
 docker compose build
 ```
 
-# 啟動系統(optional)
+### 啟動系統(optional)
 ```bash
 docker compose up -d
 ```
