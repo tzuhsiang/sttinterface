@@ -5,6 +5,11 @@ WORKDIR /app
 
 COPY . /app
 
+# 設定代理伺服器
+# ENV http_proxy=http://10.160.3.88:8080
+# ENV https_proxy=http://10.160.3.88:8080
+
+
 # 安裝必要的系統依賴（Whisper 需要 ffmpeg）
 RUN apt-get update && apt-get install -y ffmpeg
 
