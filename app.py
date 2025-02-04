@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from PIL import Image
 import PyPDF2
-from stt import transcribe_audio_to_json
+from stt.stt import transcribe_audio_to_json
 
 # 設定頁面標題
 st.set_page_config(page_title="拖拉式檔案上傳")
