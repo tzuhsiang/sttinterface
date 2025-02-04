@@ -8,7 +8,14 @@
 - streamlit
 - whisper
 - 其他基本python套件
+- docker(optional)
+- docker-compose(optional)
 
-# 執行指令
+# 執行指令(用本機環境)
 streamlit run app.py
 
+# 建置映像檔(optional)
+docker compose build
+
+# 啟動系統(optional)
+docker compose up -d
