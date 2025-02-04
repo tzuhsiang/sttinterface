@@ -59,6 +59,7 @@ with col2:
                 st.dataframe(df)
             elif uploaded_file.name.endswith((".png", ".jpg", ".jpeg")):
                 image = Image.open(uploaded_file)
+                st.write("🖼️ 預覽圖片內容:")
                 st.image(image, caption=uploaded_file.name, use_container_width=True)
             elif uploaded_file.name.endswith(".pdf"):
                 st.write("📄 PDF 預覽:")
